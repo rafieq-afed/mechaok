@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1e1e1e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mechaok" />
   <title>Mechaok — service reminders</title>
+  <link rel="icon" type="image/png" href="icons/icon-192.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -27,6 +34,7 @@
 
   <footer class="footer">
     <p>Data stays in <strong>localStorage</strong> on this device. Export from the menu on each bike if you want a backup.</p>
+    <p class="footer-pwa"><strong>Install as app:</strong> Android Chrome — menu → <em>Install app</em> or <em>Add to Home screen</em>. iPhone Safari — Share → <em>Add to Home Screen</em>.</p>
   </footer>
 
   <template id="tpl-bike">
