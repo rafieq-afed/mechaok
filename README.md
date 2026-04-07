@@ -1,6 +1,6 @@
 # mechaok
 
-Motorbike service reminders — static app for **GitHub Pages**. Data is stored in the browser (`localStorage`).
+Motorbike service reminders by **odometer (km)** — static app for **GitHub Pages**. Data is stored in the browser (`localStorage`).
 
 ## Local preview
 

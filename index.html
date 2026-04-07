@@ -9,7 +9,7 @@
 <body>
   <header class="header">
     <h1>Mechaok</h1>
-    <p class="tagline">Motorbike service reminders — saved in this browser only</p>
+    <p class="tagline">Motorbike service reminders by odometer (km) — saved in this browser only</p>
   </header>
 
   <main class="main">
@@ -39,6 +39,18 @@
         </div>
       </header>
 
+      <section class="odometer-row" aria-label="Current odometer">
+        <h3 class="subheading">Current odometer</h3>
+        <form class="form-row js-form-odometer">
+          <label class="odometer-label">
+            <span class="sr-only">Kilometres</span>
+            <input type="number" name="currentKm" min="0" max="9999999" step="1" placeholder="km" class="input-km" />
+          </label>
+          <button type="submit">Save</button>
+        </form>
+        <p class="hint js-odometer-hint" hidden>Enter your bike’s odometer so due/overdue is calculated.</p>
+      </section>
+
       <section class="service-add" aria-label="Add service item">
         <h3 class="subheading">New service item</h3>
         <form class="form-grid js-form-service">
@@ -47,12 +59,12 @@
             <input type="text" name="name" required maxlength="120" placeholder="Engine oil" />
           </label>
           <label>
-            Last done
-            <input type="date" name="lastDate" required />
+            Last service at (km)
+            <input type="number" name="lastKm" min="0" max="9999999" step="1" required />
           </label>
           <label>
-            Every (months)
-            <input type="number" name="intervalMonths" min="0.25" max="120" step="0.25" value="3" required />
+            Every (km)
+            <input type="number" name="intervalKm" min="1" max="999999" step="1" value="5000" required />
           </label>
           <div class="form-actions">
             <button type="submit">Add item</button>
@@ -76,7 +88,7 @@
       </div>
       <p class="service-meta"></p>
       <div class="item-actions">
-        <button type="button" class="btn-small js-mark-done">Mark done today</button>
+        <button type="button" class="btn-small js-mark-done">Mark done at current km</button>
         <button type="button" class="btn-small btn-ghost danger js-delete-item">Remove</button>
       </div>
     </li>

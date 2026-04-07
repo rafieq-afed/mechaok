@@ -245,6 +245,37 @@ button:hover {
   color: var(--over);
 }
 
+.badge[data-status="unknown"] {
+  background: rgba(133, 133, 133, 0.2);
+  color: var(--muted);
+}
+
+.odometer-row {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.odometer-label {
+  flex: 1;
+  min-width: 8rem;
+}
+
+.input-km {
+  width: 100%;
+}
+
+.hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .item-actions {
   display: flex;
   flex-wrap: wrap;
