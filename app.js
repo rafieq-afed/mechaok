@@ -27,11 +27,16 @@ function parseYmd(s) {
   return new Date(y, m - 1, d);
 }
 
+const AVG_DAYS_PER_MONTH = 30.436875;
+
 function addMonths(date, months) {
+  const whole = Math.trunc(months);
+  const frac = months - whole;
   const d = new Date(date.getTime());
   const day = d.getDate();
-  d.setMonth(d.getMonth() + months);
+  d.setMonth(d.getMonth() + whole);
   if (d.getDate() < day) d.setDate(0);
+  if (frac !== 0) d.setDate(d.getDate() + Math.round(frac * AVG_DAYS_PER_MONTH));
   return d;
 }
 
