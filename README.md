@@ -1,3 +1,17 @@
 # mechaok
 
-Personal project workspace.
+Motorbike service reminders — static app for **GitHub Pages**. Data is stored in the browser (`localStorage`).
+
+## Local preview
+
+Open `index.html` in a browser, or from this folder run:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then visit `http://127.0.0.1:8080`.
+
+## GitHub Pages
+
+Repo **Settings → Pages**: set **Source** to your branch (e.g. `main`) and **folder** `/ (root)`, save. The site will be at `https://<user>.github.io/mechaok/` if the repo is named `mechaok`.

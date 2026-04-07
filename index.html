@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mechaok — service reminders</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Mechaok</h1>
+    <p class="tagline">Motorbike service reminders — saved in this browser only</p>
+  </header>
+
+  <main class="main">
+    <section class="card" aria-labelledby="add-bike-heading">
+      <h2 id="add-bike-heading" class="card-title">Add bike</h2>
+      <form id="form-bike" class="form-row">
+        <label class="sr-only" for="bike-name">Bike name</label>
+        <input id="bike-name" type="text" placeholder="e.g. Honda PCX" required maxlength="80" />
+        <button type="submit">Add bike</button>
+      </form>
+    </section>
+
+    <div id="bikes-root" class="bikes"></div>
+  </main>
+
+  <footer class="footer">
+    <p>Data stays in <strong>localStorage</strong> on this device. Export from the menu on each bike if you want a backup.</p>
+  </footer>
+
+  <template id="tpl-bike">
+    <article class="card bike" data-bike-id="">
+      <header class="bike-header">
+        <h2 class="bike-title"></h2>
+        <div class="bike-actions">
+          <button type="button" class="btn-ghost js-export" title="Download JSON backup">Export</button>
+          <button type="button" class="btn-ghost danger js-delete-bike">Remove bike</button>
+        </div>
+      </header>
+
+      <section class="service-add" aria-label="Add service item">
+        <h3 class="subheading">New service item</h3>
+        <form class="form-grid js-form-service">
+          <label>
+            Name
+            <input type="text" name="name" required maxlength="120" placeholder="Engine oil" />
+          </label>
+          <label>
+            Last done
+            <input type="date" name="lastDate" required />
+          </label>
+          <label>
+            Every (months)
+            <input type="number" name="intervalMonths" min="0.25" max="120" step="0.25" value="3" required />
+          </label>
+          <div class="form-actions">
+            <button type="submit">Add item</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="service-list-wrap" aria-label="Service items">
+        <h3 class="subheading">Schedule</h3>
+        <ul class="service-list js-service-list"></ul>
+        <p class="empty-hint js-empty" hidden>No items yet — add one above.</p>
+      </section>
+    </article>
+  </template>
+
+  <template id="tpl-item">
+    <li class="service-item" data-item-id="">
+      <div class="service-main">
+        <span class="service-name"></span>
+        <span class="badge" data-status=""></span>
+      </div>
+      <p class="service-meta"></p>
+      <div class="item-actions">
+        <button type="button" class="btn-small js-mark-done">Mark done today</button>
+        <button type="button" class="btn-small btn-ghost danger js-delete-item">Remove</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
