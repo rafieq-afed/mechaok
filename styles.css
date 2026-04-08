@@ -71,6 +71,28 @@ body {
   border-top: 1px solid var(--border);
 }
 
+.footer-donate {
+  padding-top: 0.75rem;
+  margin-top: 0.35rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.donate-link {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.donate-link:hover {
+  background: rgba(86, 156, 214, 0.12);
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);

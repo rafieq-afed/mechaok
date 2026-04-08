@@ -1,4 +1,4 @@
-const CACHE = "mechaok-shell-v1";
+const CACHE = "mechaok-shell-v2";
 const ASSETS = [
   "./",
   "./index.html",
